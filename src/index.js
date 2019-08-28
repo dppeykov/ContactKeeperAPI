@@ -1,9 +1,11 @@
-var http = require("http");
+const express = require("express");
 
-//create a server object:
-http
-  .createServer(function(req, res) {
-    res.write("Backend API"); //write a response to the client
-    res.end(); //end the response
-  })
-  .listen(8080); //the server object listens on port 8080
+const app = express();
+
+app.get("/", (req, res) =>
+  res.json({ msg: "Welcome to the ContactKeeper API" })
+);
+
+const PORT = process.env.PORT || 8080;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
