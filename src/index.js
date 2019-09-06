@@ -1,4 +1,5 @@
 const express = require("express");
+// if babel is present, the import from should work as well
 
 const app = express();
 
